@@ -1,30 +1,32 @@
 
-CREATE DATABASE Modulo2_unidad1_disenosql;
---ahi cree la base de datos
+CREATE DATABASE modulo2_unidad1_diseno;
+-- Se crea la base de datos para almacenar las tablas del ejercicio.
 
-USE Modulo2_unidad1_disenosql;
---ahi puse en uso la base que cree
+USE Modulo2_unidad1_diseno;
+-- Se selecciona la base de datos creada para trabajar sobre ella.
 
---ahora voy a crear la tabla desnormalizada
---tabla clientes
+-- Se crea la tabla clientes.
+-- Cada columna utiliza un tipo de dato acorde a la información almacenada.
 
 CREATE TABLE Clientes (
-IDCliente INT,
+ID_Cliente INT,
 Nombre VARCHAR(100),
 Perfil_bio TEXT, 
-fecha_registro DATE,
+fecha_registro DATE
 );
 
---ahora voy a crear la tabla productos
+-- Se crea la tabla productos.
+-- DECIMAL(10,2) permite almacenar el precio con precisión.
+-- BIT permite representar si el producto está activo (1) o inactivo (0).
 
 CREATE TABLE Productos(
-IDProductos INT,
+ID_Productos INT,
 Descripciones VARCHAR(255),
 Precio DECIMAL(10,2),
-esta_activo VARCHAR(10),
+esta_activo BIT
 );
 
---y ahora voy a verificar que estén bien las columnas
+-- Se verifica que las tablas hayan sido creadas correctamente.
 
 SELECT * FROM Productos
 SELECT * FROM Clientes
