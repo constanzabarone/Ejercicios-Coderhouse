@@ -1,1 +1,30 @@
 
+CREATE DATABASE Modulo2_unidad1_disenosql;
+--ahi cree la base de datos
+
+USE Modulo2_unidad1_disenosql;
+--ahi puse en uso la base que cree
+
+--ahora voy a crear la tabla desnormalizada
+--tabla clientes
+
+CREATE TABLE Clientes (
+IDCliente INT,
+Nombre VARCHAR(100),
+Perfil_bio TEXT, 
+fecha_registro DATE,
+);
+
+--ahora voy a crear la tabla productos
+
+CREATE TABLE Productos(
+IDProductos INT,
+Descripciones VARCHAR(255),
+Precio DECIMAL(10,2),
+esta_activo VARCHAR(10),
+);
+
+--y ahora voy a verificar que estén bien las columnas
+
+SELECT * FROM Productos
+SELECT * FROM Clientes
