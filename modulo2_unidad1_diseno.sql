@@ -1,31 +1,29 @@
+-- Tabla clientes
+-- id_cliente usa INT porque representa un identificador numérico entero.
+-- nombre usa VARCHAR(100) porque almacena texto de longitud variable.
+-- perfil_bio usa VARCHAR(MAX) porque puede contener una descripción extensa.
+-- fecha_registro usa DATE porque solo necesitamos almacenar la fecha.
 
-CREATE DATABASE modulo2_unidad1_diseno;
--- Se crea la base de datos para almacenar las tablas del ejercicio.
-
-USE Modulo2_unidad1_diseno;
--- Se selecciona la base de datos creada para trabajar sobre ella.
-
--- Se crea la tabla clientes.
--- Cada columna utiliza un tipo de dato acorde a la información almacenada.
-
-CREATE TABLE Clientes (
-ID_Cliente INT,
-Nombre VARCHAR(100),
-Perfil_bio TEXT, 
-fecha_registro DATE
+CREATE TABLE clientes (
+    id_cliente INT,
+    nombre VARCHAR(100),
+    perfil_bio VARCHAR(MAX),
+    fecha_registro DATE
 );
 
--- Se crea la tabla productos.
--- DECIMAL(10,2) permite almacenar el precio con precisión.
--- BIT permite representar si el producto está activo (1) o inactivo (0).
+-- Tabla productos
+-- id_producto usa INT porque representa un identificador numérico entero.
+-- descripcion usa VARCHAR(255) porque almacena texto de longitud variable.
+-- precio usa DECIMAL(10,2) porque permite guardar valores monetarios con precisión.
+-- esta_activo usa BIT porque representa un estado lógico:
+-- 1 = activo y 0 = inactivo.
 
-CREATE TABLE Productos(
-ID_Productos INT,
-Descripciones VARCHAR(255),
-Precio DECIMAL(10,2),
-esta_activo BIT
+CREATE TABLE productos (
+    id_producto INT,
+    descripcion VARCHAR(255),
+    precio DECIMAL(10,2),
+    esta_activo BIT
 );
-
 -- Se verifica que las tablas hayan sido creadas correctamente.
 
 SELECT * FROM Productos
