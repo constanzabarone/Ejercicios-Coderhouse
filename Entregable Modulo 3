@@ -37,7 +37,7 @@ id_categoria INT,
 precio DECIMAL(10,2) NOT NULL,
 stock INT DEFAULT 0,
 activo TINYINT DEFAULT 1,
-FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria)
+CONSTRAINT FK_Fact_Cateogoria FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria)
 );
 
 CREATE TABLE ventas(
@@ -47,8 +47,8 @@ id_producto INT,
 cantidad INT NOT NULL,
 precio_unitario DECIMAL(10,2) NOT NULL,
 fecha_venta DATE NOT NULL,
-FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
-FOREIGN KEY (id_producto) REFERENCES productos (id_producto)
+CONSTRAINT FK_Fact_Cliente FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
+CONSTRAINT FK_Fact_Producto FOREIGN KEY (id_producto) REFERENCES productos (id_producto)
 );
 
 -- SECCIÓN DML
