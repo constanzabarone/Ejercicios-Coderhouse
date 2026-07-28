@@ -2,11 +2,12 @@
 -- Proyecto: Ventas_Tech_DB
 -- Autora: Constanza Barone
 
-
 CREATE DATABASE Ventas_Tech_DB;
+GO
 
 USE Ventas_Tech_DB;
 
+GO
 
 -- SECCIÓN DDL 
 
@@ -15,6 +16,7 @@ DROP TABLE IF EXISTS productos;
 DROP TABLE IF EXISTS clientes;
 DROP TABLE IF EXISTS categorias;
 
+GO
 
 CREATE TABLE categorias(
 id_categoria INT PRIMARY KEY,
@@ -51,6 +53,7 @@ CONSTRAINT FK_Fact_Cliente FOREIGN KEY (id_cliente) REFERENCES clientes (id_clie
 CONSTRAINT FK_Fact_Producto FOREIGN KEY (id_producto) REFERENCES productos (id_producto)
 );
 
+GO
 -- SECCIÓN DML
 
 INSERT INTO categorias(
@@ -115,9 +118,11 @@ VALUES
 (9,  4, 4, 1,  120.00, '2024-03-14'),
 (10, 5, 3, 2,  450.00, '2024-03-15');
 
+GO
 -- Confirmá que cada tabla se cargó correctamente
 SELECT * FROM categorias;
 SELECT * FROM clientes;
 SELECT * FROM productos;
 SELECT * FROM ventas;
 
+GO
